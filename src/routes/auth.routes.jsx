@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 
-import { Signin } from "../pages/Signin";
-import { Signup } from "../pages/Signup";
+import { SignIn } from "../pages/Signin";
+import { SignUp } from "../pages/Signup";
 
-export const AppRoutes = () => {
+export const AuthRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Signin />} />
-      <Route path="/signup" element={<Signup />} />
+      <Route path="/" element={<SignIn />} />
+      <Route path="/register" element={<SignUp />} />
     </Routes>
   );
 };
