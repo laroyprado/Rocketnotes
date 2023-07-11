@@ -3,6 +3,9 @@ import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 
+
+
+
 export const Profile = () => {
   return (
     <Container>
