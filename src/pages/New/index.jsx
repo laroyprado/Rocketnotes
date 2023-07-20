@@ -40,6 +40,20 @@ export const New = () => {
   }
 
   async function handleNewNote() {
+    if (!title) {
+      return alert("Digite o título da nota");
+    }
+    if (newLink) {
+      alert(
+        "Você deixou uma link no campo adicionar, clique em adicionar ou deixe em branco"
+      );
+    }
+    if (newTag) {
+      alert(
+        "Você deixou uma tag no campo adicionar, clique em adicionar ou deixe em branco"
+      );
+    }
+
     await api.post("notes", {
       title,
       description,
