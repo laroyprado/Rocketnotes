@@ -7,6 +7,7 @@ import { ButtonText } from "../../components/ButtonText";
 import { Note } from "../../components/Note";
 import { useState, useEffect } from "react";
 import { api } from "../../services/api";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
   const [tags, setTags] = useState([]);
@@ -14,6 +15,8 @@ export const Home = () => {
 
   const [search, setSearch] = useState("");
   const [notes, setNotes] = useState([]);
+
+  const navigate = useNavigate();
 
   function handleTagSelected(tagName) {
     if (tagName === "all") {
@@ -27,6 +30,10 @@ export const Home = () => {
     } else {
       setTagsSelected((prevState) => [...prevState, tagName]);
     }
+  }
+
+  function handleDetails(id) {
+    navigate(`/details/${id}`);
   }
 
   useEffect(() => {
@@ -85,7 +92,11 @@ export const Home = () => {
       <Content>
         <Section title="Minhas notas">
           {notes.map((note) => (
-            <Note key={String(note.id)} data={note} />
+            <Note
+              key={String(note.id)}
+              onClick={() => handleDetails(note.id)}
+              data={note}
+            />
           ))}
         </Section>
       </Content>
