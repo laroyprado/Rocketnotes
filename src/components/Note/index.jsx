@@ -7,7 +7,6 @@ export const Note = ({ data, ...rest }) => {
 
       {data.tags && (
         <footer>
-          {console.log(data.tags)}
           {data.tags.map((tag) => {
             return <Tag key={tag.id} title={tag.name} />;
           })}
